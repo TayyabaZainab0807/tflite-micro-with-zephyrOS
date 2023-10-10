@@ -23,6 +23,7 @@ If you want to build TFLM for the Cortex-M4 processor:
 
 - `gmake -f tensorflow/lite/micro/tools/make/Makefile TARGET=cortex_m_generic TARGET_ARCH=cortex-m4 OPTIMIZED_KERNEL_DIR=cmsis_nn microlite`
 
+replace m4 by m33 if you want to build for nrf53
 
 ## Building and Deploying ZephyrOS with TFLM
 
@@ -32,7 +33,7 @@ If you want to build TFLM for the Cortex-M4 processor:
    `cd ~/zephyrproject`   
    `west build -p always -b nrf5340dk_nrf5340_cpuapp zephyr/samples/basic/hello_world/`
 
-3. Make sure to edit the path to your latest TFLM in the `CMakeLists.txt` file and check the `target_arch` (for nRF5340 or nRF52, it should be `cortex-m4`).
+3. Make sure to edit the path to your latest TFLM in the `CMakeLists.txt` file and check the `target_arch` (for nRF5340 or nRF52, it should be `cortex-m33` or `cortex-m4`).
 4. Deploy the built project using the following command: `west flash`
  
 Once the above steps are completed successfully, follow these additional instructions to replace the TFLM image with the latest version:
